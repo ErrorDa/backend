@@ -14,7 +14,7 @@ def my_form_post():
         f.write(processed_text)
         f.close()
     if request.method == 'GET':
-        f = open("dats.txt", 'r')
+        f = open("data.txt", 'r')
         text=f.read()
         f.close()
     return render_template("my-form.html", text=text)
