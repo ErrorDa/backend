@@ -13,7 +13,11 @@ def my_form_post():
         f = open("data.txt", 'w')
         f.write(processed_text)
         f.close()
-    return render_template("my-form.html")
+    if request.method == 'GET':
+        f = open("dats.txt", 'r')
+        text=f.read()
+        f.close()
+    return render_template("my-form.html", text=text)
 
 
 if __name__ == '__main__':
